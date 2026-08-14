@@ -5,7 +5,7 @@ from apps.adopciones.models import Persona
 # Create your models here.
 
 class Vacuna(models.Model):
-	nombre = models.CharField(max_length=6)
+	nombre = models.CharField(max_length=60)
 
 class Mascota(models.Model):
 	nombre = models.CharField(max_length=50)
