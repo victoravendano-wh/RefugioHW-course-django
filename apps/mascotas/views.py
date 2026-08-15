@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from apps.mascotas.forms import MascotaForm
 from apps.mascotas.models import Mascota
+from django.views.generic import ListViews
 
 
 # Create your views here.
@@ -44,3 +45,6 @@ def mascota_borrar(request, id_mascota):
 		return redirect('app mascotas:lista_mascotas')
 
 	return render(request, 'mascota/mascota_borrar.html', {'mascota':mascota})
+
+class MascotaList(ListView):
+	
