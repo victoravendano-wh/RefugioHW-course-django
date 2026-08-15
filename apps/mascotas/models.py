@@ -6,7 +6,8 @@ from apps.adopciones.models import Persona
 
 class Vacuna(models.Model):
 	nombre = models.CharField(max_length=60)
-
+	def __str__(self):
+		return '{}'.format(self.nombre)
 class Mascota(models.Model):
 	nombre = models.CharField(max_length=50)
 	sexo = models.CharField(max_length=60)
@@ -14,3 +15,4 @@ class Mascota(models.Model):
 	fecha_rescate = models.DateField()
 	persona = models.ForeignKey(Persona, null = True, on_delete = models.CASCADE, blank=True)
 	vacuna = models.ManyToManyField(Vacuna, null=True, blank=True)
+
