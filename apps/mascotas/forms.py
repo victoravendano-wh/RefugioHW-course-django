@@ -4,8 +4,6 @@ from apps.mascotas.models import Mascota
 
 class MascotaForm(forms.ModelForm):
 
-
-
     class Meta:
         model = Mascota
 
