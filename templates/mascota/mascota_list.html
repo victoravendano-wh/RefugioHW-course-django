@@ -13,6 +13,7 @@
             <td>Edad</td>
             <td>Fecha de rescate</td>
             <td>Adoptante</td>
+            <td>Acciones</td>
 
         </tr>
 
@@ -33,7 +34,12 @@
                         <td>{{ mascota.fecha_rescate }}</td>
                         <td>{{ mascota.persona.nombre }} {{ mascota.persona.apellidos}}</td>
                         <td>{{ mascota.vacuna.nombre }}</td>
-                    </tr>
+                        <td>
+                            <a class="btn btn-primary" href="{% url 'app mascotas:edicion_mascotas' mascota.id %}">Editar</a>
+                            <a class="btn btn-danger" href="{% url 'app mascotas:borrar_mascota' mascota.id %}">Borrar</a>
+                        
+                        </td>
+                     </tr>
                 {% endfor %}
             {% else %}
             <h1>

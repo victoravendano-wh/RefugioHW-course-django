@@ -23,5 +23,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^adopciones/', include('apps.adopciones.urls', namespace="app adopciones")),
     url(r'^mascotas/', include('apps.mascotas.urls', namespace="app mascotas"))
-
 ]
