@@ -8634,3 +8634,17 @@ body{
     flex-wrap: nowrap;
     align-items: center;
 }
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-containter-main{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-primary{
+    margin-right: 5px;
+}

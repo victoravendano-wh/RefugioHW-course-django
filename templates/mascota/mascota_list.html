@@ -1,6 +1,22 @@
 {%extends 'base/base.html'%}
 
+
 {%block content%}
+
+
+<header>
+
+    <h1 class="titulo">
+        Mascotas en adopcion
+    </h1>
+    <div class="button-containter-main">
+        <a class="btn btn-primary" href="{% url 'app mascotas:mascota_crear' %}">Nuevo</a>
+        <a class="btn btn-danger" href="{% url "landing" %}">Atras</a>
+    </div>
+
+
+</header>
+
 
 <table class="table table-border">
 
@@ -19,7 +35,6 @@
 
 
     </thead>
-
     <tbody>
 
         {%if object_list%}
@@ -33,7 +48,7 @@
                         <td>{{ mascota.edad_aproximada }}</td>
                         <td>{{ mascota.fecha_rescate }}</td>
                         <td>{{ mascota.persona.nombre }} {{ mascota.persona.apellidos}}</td>
-                        <td>{{ mascota.vacuna.nombre }}</td>
+
                         <td>
                             <a class="btn btn-primary" href="{% url 'app mascotas:edicion_mascotas' mascota.id %}">Editar</a>
                             <a class="btn btn-danger" href="{% url 'app mascotas:borrar_mascota' mascota.id %}">Borrar</a>
@@ -46,10 +61,7 @@
                 No hay registro de mascotas
             </h1>
         {% endif %}
-		<tr><td></td><td></td><td></td><td></td><td><td></td><td></td><td>
-				<a class="btn btn-primary" href="{% url 'app mascotas:mascota_crear' %}">Nuevo</a>
-			</td>
-		</tr>
+
 
 
 
