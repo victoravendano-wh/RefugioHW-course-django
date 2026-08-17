@@ -17,3 +17,7 @@ class Mascota(models.Model):
 	persona = models.ForeignKey(Persona, null = True, on_delete = models.CASCADE, blank=True)
 	vacuna = models.ManyToManyField(Vacuna, null=True, blank=True)
 
+class Persona(models.Model):
+	persona = models.ForeignKey(Persona, null=True, blank=True)
+	numero_mascotas = models.IntegerField()
+	razones = models.TextField()

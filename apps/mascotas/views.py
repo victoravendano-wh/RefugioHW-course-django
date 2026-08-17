@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from apps.mascotas.forms import MascotaForm
 from apps.mascotas.models import Mascota
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 
 
@@ -55,5 +55,16 @@ class MascotaCrear(CreateView):
 	form_class = MascotaForm
 	model = Mascota
 	template_name = 'mascota/mascota_form.html' #nombre del template a pintar para llenar el formulario
-	success_url = reverse_lazy('app mascotas:mascota_list') #una vez exitoso el POST nos redirige a la app listar. 
-	
+	success_url = reverse_lazy('app mascotas:lista_mascotas') #una vez exitoso el POST nos redirige a la app listar. 
+
+class MascotaUpdate(UpdateView): # Lo mismo que el CreateView, pero este ya nos hace el instance en automatico.
+	form_class = MascotaForm
+	model = Mascota
+	template_name = 'mascota/mascota_form.html' #nombre del template a pintar para llenar el formulario
+	success_url = reverse_lazy('app mascotas:lista_mascotas')
+
+class MascotaEliminar(DeleteView):
+	model = Mascota
+	template_name = 'mascota/mascota_borrar.html' #nombre template a pintar.
+	success_url = reverse_lazy('app mascotas:lista_mascotas')
+	context_object_name = 'mascota'
