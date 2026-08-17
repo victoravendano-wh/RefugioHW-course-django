@@ -8625,3 +8625,12 @@ body{
     margin-left: 20px;
     margin-right: 20px;
 }
+
+
+.mascota-bienvenida{    
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
