@@ -1,8 +1,9 @@
 {% extends 'base/base.html' %}
+{% load staticfiles %}
 
 {% block content %}
 
-<table class="table table-bordered">
+<table class="table table-border">
 	<thead>
 		<tr>
 			<td>No. Solicitud</td>
@@ -23,16 +24,25 @@
 			<td>{{ solicitud.razones }}</td>
 			
 			<td>
-				<a class="btn btn-primary" href="#">Editar</a>
-				<a class="btn btn-danger" href="#">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'app_adopciones:solicitud_actualizar' solicitud.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'app_adopciones:solicitud_borrar' solicitud.id %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
-		
+
 		{% else %}
 		<h1>No hay registros de solicitudes</h1>
+
+
 		{% endif %}
+		<tr><td></td><td></td><td></td><td></td><td>
+				<a class="btn btn-primary" href="{% url 'app_adopciones:solicitud_crear' %}">Nuevo</a>
+			</td>
+		</tr>
+
 	</tbody>
 </table> 
+
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
 
 {% endblock%}

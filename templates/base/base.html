@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" href="{%static 'resources/favicon.png'%}" type="image/png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -27,7 +28,7 @@
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mascotas <span class="caret"></span></a>
+                        <a href="{% url "app mascotas:lista_mascotas" %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mascotas </a>
                         <ul class="dropdown-menu" role="menu">
                           <li>
                             <a href="#">Registrar</a>
@@ -38,7 +39,7 @@
                         </ul>
                       </li>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Adopciones<span class="caret"></span></a>
+                        <a href="{% url 'app_adopciones:solicitud_listar' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Adopciones</a>
                         <ul class="dropdown-menu" role="menu">
                           <li>
                             <a href="#">Solicitar</a>
@@ -54,7 +55,6 @@
                         <a href="#">Código Facilito</a>
                       </li>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Opciones<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                           <li>
                             <a href="#">Salir</a>

@@ -78,4 +78,4 @@ class SolicitudEliminar(DeleteView):
 	model = Solicitud
 	template_name = 'adopcion/solicitud_eliminar.html'
 	success_url = reverse_lazy('app_adopciones:solicitud_listar')
-	
+	 
