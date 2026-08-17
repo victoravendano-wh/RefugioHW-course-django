@@ -15,12 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from .views import index
 
 
 
 urlpatterns = [
+    
     url(r'^admin/', admin.site.urls),
-    url(r'^adopciones/', include('apps.adopciones.urls', namespace="app adopciones")),
-    url(r'^mascotas/', include('apps.mascotas.urls', namespace="app mascotas"))
+    url(r'^adopciones/', include('apps.adopciones.urls', namespace="app_adopciones")),
+    url(r'^mascotas/', include('apps.mascotas.urls', namespace="app mascotas")),
+    url(r'^$', index, name="landing")
+
 ]

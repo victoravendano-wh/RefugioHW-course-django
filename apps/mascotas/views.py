@@ -37,7 +37,7 @@ def mascota_edit(request, id_mascota):
 			form.save()
 		return redirect('app mascotas:lista_mascotas')
 	return render(request, 'mascota/mascota_form.html', {'form':form})
-
+ 
 def mascota_borrar(request, id_mascota):
 	mascota = Mascota.objects.get(id=id_mascota)
 
