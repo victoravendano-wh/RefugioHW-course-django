@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from apps.mascotas.forms import MascotaForm
 from apps.mascotas.models import Mascota
-from django.views.generic import ListViews
+from django.views.generic import ListView, CreateView
+from django.core.urlresolvers import reverse_lazy
 
 
 # Create your views here.
@@ -11,7 +12,7 @@ def mas_index(request):
 	return render(request, 'mascota/mascota.html')
 
 
-def mascota_view(request):
+def mascota_view(request):  # ya no usamos, pasamos a vista por clase. 
 	if request.method == 'POST':
 		form = MascotaForm(request.POST)
 		if form.is_valid():
@@ -21,7 +22,7 @@ def mascota_view(request):
 		form = MascotaForm()
 	return render(request, 'mascota/mascota_form.html', {'form':form}) 
 
-def mascota_list (request):
+def mascota_list (request):                                 #Ya no usamos, pasamos a vista por modelo en linea 49
 	mascota = Mascota.objects.all()
 	contexto = {'mascotas':mascota}
 	return render(request, 'mascota/mascota_list.html', contexto)
@@ -47,4 +48,12 @@ def mascota_borrar(request, id_mascota):
 	return render(request, 'mascota/mascota_borrar.html', {'mascota':mascota})
 
 class MascotaList(ListView):
+	model = Mascota
+	template_name = 'mascota/mascota_list.html'
+
+class MascotaCrear(CreateView):
+	form_class = MascotaForm
+	model = Mascota
+	template_name = 'mascota/mascota_form.html' #nombre del template a pintar para llenar el formulario
+	success_url = reverse_lazy('app mascotas:mascota_list') #una vez exitoso el POST nos redirige a la app listar. 
 	
