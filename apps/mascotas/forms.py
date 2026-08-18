@@ -15,6 +15,7 @@ class MascotaForm(forms.ModelForm):
             'fecha_rescate', 
             'persona', 
             'vacuna',
+            'imagen',
         ]
         labels = {
             'nombre': 'Nombre de la mascota',
@@ -23,6 +24,7 @@ class MascotaForm(forms.ModelForm):
             'fecha_rescate': 'Fecha de rescate', 
             'persona': 'Persona que adopta', 
             'vacuna': 'Vacunas aplicadas',
+            'imagen':'Imagen de la mascota'
         }
         widgets = {
             'nombre': forms.TextInput(attrs={'class':'form-control'}),
@@ -31,4 +33,5 @@ class MascotaForm(forms.ModelForm):
             'fecha_rescate': forms.TextInput(attrs={'class':'form-control'}),
             'persona':forms.Select(attrs={'class':'form-control'}),
             'vacuna': forms.CheckboxSelectMultiple(),
+            'imagen':forms.FileInput(attrs={'accept':'image/*', 'class':'imagen'})
         }

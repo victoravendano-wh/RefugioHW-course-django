@@ -1,7 +1,9 @@
 {%extends 'base/base.html'%}
 
 
+
 {%block header_title%}
+
 	Lista de mascotas en adopción
 {%endblock%}
 
@@ -31,9 +33,9 @@
     <tbody>
 
         {%if object_list%}
-            
+
                 {% for mascota in object_list %}
-                    
+
                     <tr>
                         <td>{{ mascota.id }}</td>
                         <td>{{ mascota.nombre }}</td>
@@ -45,7 +47,7 @@
                         <td>
                             <a class="btn btn-primary" href="{% url 'app mascotas:edicion_mascotas' mascota.id %}">Editar</a>
                             <a class="btn btn-danger" href="{% url 'app mascotas:borrar_mascota' mascota.id %}">Borrar</a>
-                        
+
                         </td>
                      </tr>
                 {% endfor %}

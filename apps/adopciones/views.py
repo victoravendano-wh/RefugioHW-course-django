@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import ListView, DeleteView, UpdateView, CreateView
 from django.core.urlresolvers import reverse_lazy
-
+from django.contrib import messages
 # Create your views here.
 
 from apps.adopciones.models import Solicitud, Persona
@@ -36,9 +36,11 @@ class SolicitudCrear(CreateView):
 			solicitud = form.save(commit=False)
 			solicitud.persona = form2.save()
 			solicitud.save()
+			messages.success(self.request, "Nuevo registro agregado correctamente") # 🔥🔥🔥🔥mandamos el mensaje antes del httpresponseredirecccct
 			return HttpResponseRedirect(self.get_success_url())
 		else:
 			return self.render_to_response(self.get_context_data(form=form, form2=form2))
+
 
 class SolicitudUpdate(UpdateView):
 	model= Solicitud
@@ -58,8 +60,7 @@ class SolicitudUpdate(UpdateView):
 		if 'form2' not in context:
 			context['form2'] = self.second_form_class(instance=persona)
 		context['id'] = pk
-		return context;
-
+		return context
 	def post(self, request, *args, **kwargs):
 		self.object = self.get_object
 		id_solicitud = kwargs['pk']
@@ -70,12 +71,19 @@ class SolicitudUpdate(UpdateView):
 		if form.is_valid() and form2.is_valid():
 			form.save()
 			form2.save()
+			messages.success(self.request, "Registro actualizado correctamente") # ✅✅✅✔️✔️👍👍👍 lo mandamos bien.
 			return HttpResponseRedirect(self.get_success_url())
 		else:
 			return HttpResponseRedirect(self.get_success_url())
+	def form_valid(self, form):
+		messages.success(self.request, "Registro guardado correctamente")
+		return super().form_valid(form)
 
 class SolicitudEliminar(DeleteView):
 	model = Solicitud
 	template_name = 'adopcion/solicitud_eliminar.html'
 	success_url = reverse_lazy('app_adopciones:solicitud_listar')
+	def delete (self, request ,*args, **kwargs):
+		messages.success(self.request, "Registro eliminado correctamente")
+		return super().delete(request, *args, **kwargs)
 	 

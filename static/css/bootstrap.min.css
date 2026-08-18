@@ -8654,3 +8654,16 @@ body{
     display: block;
     margin-top: 3px;
 }
+
+.imagen button{
+
+    border: none;
+    background-color: red;
+
+
+}
+
+
+.alert{
+    margin-left: 10px
+}

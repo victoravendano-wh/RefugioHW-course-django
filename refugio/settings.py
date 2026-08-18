@@ -129,5 +129,8 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # input de imagen, alertas en rojo/con un label, mostrar mensaje de guardado exitoso. (django menssage), editar o eliminar la imagen, anadir titulo a todas las ventanas. Cuando se elimine igula mensaje de eliminado,  Poner mensajes igual en adopciones.
