@@ -1,21 +1,14 @@
 {%extends 'base/base.html'%}
 
 
+{%block header_title%}
+	Lista de mascotas en adopción
+{%endblock%}
+
+{%block url_nuevo_button%}"{% url 'app mascotas:mascota_crear' %}"{%endblock%}
+
+
 {%block content%}
-
-
-<header>
-
-    <h1 class="titulo">
-        Mascotas en adopcion
-    </h1>
-    <div class="button-containter-main">
-        <a class="btn btn-primary" href="{% url 'app mascotas:mascota_crear' %}">Nuevo</a>
-        <a class="btn btn-danger" href="{% url "landing" %}">Atras</a>
-    </div>
-
-
-</header>
 
 
 <table class="table table-border">

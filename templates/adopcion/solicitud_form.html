@@ -1,5 +1,13 @@
 {% extends 'base/base.html' %}
 
+
+{%block header_title%}
+	Datos de solicitud para adoptar
+{%endblock%}
+
+{%block nuevo_button%}  <!--eliminamos el boton "nuevo"-->
+{%endblock%}
+
 {% block content %}
 <form method="post">
 	{% csrf_token %}

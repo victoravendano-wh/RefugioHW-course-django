@@ -3,25 +3,16 @@
 
 
 
+{%block header_title%}
+	Solicitudes de adopciones
+{%endblock%}
 
-
+{%block url_nuevo_button%}"{% url 'app_adopciones:solicitud_crear' %}"{%endblock%}
 
 
 
 {% block content %}
 
-<header>
-
-    <h1 class="titulo">
-        Solicites de adopción
-    </h1>
-    <div class="button-containter-main">
-        <a class="btn btn-primary" href="{% url 'app_adopciones:solicitud_crear' %}">Nuevo</a>
-        <a class="btn btn-danger" href="{% url "landing" %}">Atras</a>
-    </div>
-
-
-</header>
 
 <table class="table table-border">
 	<thead>

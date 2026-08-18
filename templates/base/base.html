@@ -71,6 +71,28 @@
       </div>
     {% endblock %}
 
+    <header>
+
+      <h1 class="titulo">
+        {%block header_title%}
+          
+        {%endblock%}
+      </h1>
+      <div class="button-containter-main">
+        {%block nuevo_button%}
+          <a class="btn btn-primary" href={%block url_nuevo_button%}{%endblock%}>Nuevo</a>
+        {%endblock%}
+        {%block atras_button%}
+          <a class="btn btn-danger" href="javascript:history.back()">Atras</a>
+        {%endblock%}
+      </div>
+
+
+  </header>
+
+
+
+
     {% block header %}
       <h4></h4>
     {% endblock %}
