@@ -76,5 +76,5 @@ class MascotaEliminar(DeleteView):
 	success_url = reverse_lazy('app mascotas:lista_mascotas')
 	context_object_name = 'mascota'
 	def delete(self, request, *args, **kwargs):
-		messages.success(self.request, "Registro eliminado correctamente")
+		messages.warning(self.request, "Registro eliminado correctamente")
 		return super().delete(request, *args, **kwargs)

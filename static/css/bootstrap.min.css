@@ -8667,3 +8667,14 @@ body{
 .alert{
     margin-left: 10px
 }
+
+.d-none{
+    display: none;
+}
+
+#id_imagen_input{
+    display:none;
+}
+#id_imagen_input{
+    display:none;
+}

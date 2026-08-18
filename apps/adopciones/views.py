@@ -84,6 +84,6 @@ class SolicitudEliminar(DeleteView):
 	template_name = 'adopcion/solicitud_eliminar.html'
 	success_url = reverse_lazy('app_adopciones:solicitud_listar')
 	def delete (self, request ,*args, **kwargs):
-		messages.success(self.request, "Registro eliminado correctamente")
+		messages.warning(self.request, "Registro eliminado correctamente")
 		return super().delete(request, *args, **kwargs)
 	 

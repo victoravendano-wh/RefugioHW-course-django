@@ -33,5 +33,6 @@ class MascotaForm(forms.ModelForm):
             'fecha_rescate': forms.TextInput(attrs={'class':'form-control'}),
             'persona':forms.Select(attrs={'class':'form-control'}),
             'vacuna': forms.CheckboxSelectMultiple(),
-            'imagen':forms.FileInput(attrs={'accept':'image/*', 'class':'imagen'})
+            'imagen': forms.ClearableFileInput(attrs={'class':'d-none', 'id':'id_imagen_input'}),
+
         }

@@ -17,8 +17,3 @@ class Mascota(models.Model):
 	persona = models.ForeignKey(Persona, null = True, on_delete = models.CASCADE, blank=True)
 	vacuna = models.ManyToManyField(Vacuna, null=True, blank=True)
 	imagen = models.ImageField(upload_to='images/', blank=True, null=True)
-	class Meta:
-		db_table = "files"
-	
-	
-

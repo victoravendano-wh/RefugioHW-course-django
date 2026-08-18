@@ -15,10 +15,23 @@
     {% csrf_token %}
     
     {% for field in form %}
+
+        {% if field.name == "imagen" %}
+        <div class=form-group>
+            <label for="id_imagen_input" class="btn btn-primary">
+                Seleccionar imagen
+            </label>
+            <span id="nombre-archivo" class="ml-2">Ningún archivo seleccionado</span>
+            {{ field }}
+        </div>
+    
+        
+        {% else %}
         <div class="form-group">
             {{ field.label_tag }}
             {{ field }}
         </div>
+        {%endif%}
         {% if field.errors%}
 
         <label class="error-label"> {{field.errors.0}}</label>
@@ -28,7 +41,7 @@
     {% endfor %}
 
         {% if object.imagen%}
-            <img src="{{object.imagen.url}}" width="150" alt="">    
+            <img src="{{object.imagen.url}}" width="250" alt="imagen-de-la-mascota-en-adopcion">    
         {% endif %}
 
 
