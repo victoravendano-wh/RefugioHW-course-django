@@ -23,9 +23,9 @@ class SolicitudCrear(CreateView):
 	def get_context_data(self, **kwargs):
 		context = super(SolicitudCrear, self).get_context_data(**kwargs)
 		if 'form' not in context:
-			context['form'] = self.form_class(self.request.GET)
+			context['form'] = self.form_class() #CHECAR ESTA PARTE, NO ME QUEDA CLARO
 		if 'form2' not in context:
-			context['form2'] = self.second_form_class(self.request.GET)
+			context['form2'] = self.second_form_class() #ESTA PARTE IGUAL
 		return context
 
 	def post(self, request, *args, **kwargs):

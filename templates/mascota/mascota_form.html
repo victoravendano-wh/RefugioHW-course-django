@@ -7,7 +7,20 @@
 
 <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    
+    {% for field in form %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            {{ field }}
+        </div>
+        {% if field.errors%}
+
+        <label class="error-label"> {{field.errors.0}}</label>
+
+        {% endif %}
+
+    {% endfor %}
+
     <button class="btn btn-primary" type="submit">guardar</button>
 
 </form>

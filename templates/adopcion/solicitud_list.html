@@ -1,7 +1,27 @@
 {% extends 'base/base.html' %}
 {% load staticfiles %}
 
+
+
+
+
+
+
+
 {% block content %}
+
+<header>
+
+    <h1 class="titulo">
+        Solicites de adopción
+    </h1>
+    <div class="button-containter-main">
+        <a class="btn btn-primary" href="{% url 'app_adopciones:solicitud_crear' %}">Nuevo</a>
+        <a class="btn btn-danger" href="{% url "landing" %}">Atras</a>
+    </div>
+
+
+</header>
 
 <table class="table table-border">
 	<thead>
@@ -35,10 +55,6 @@
 
 
 		{% endif %}
-		<tr><td></td><td></td><td></td><td></td><td>
-				<a class="btn btn-primary" href="{% url 'app_adopciones:solicitud_crear' %}">Nuevo</a>
-			</td>
-		</tr>
 
 	</tbody>
 </table> 
@@ -47,4 +63,4 @@
 
 {% endblock%}
 
-#titulo, input de imagen, alertas en rojo/con un label, mostrar mensaje de guardado exitoso. (django menssage), editar o eliminar la imagen, anadir titulo a todas las ventanas. Cuando se elimine igula mensaje de eliminado, boton de anadis a un lado del titulo, fuera de la tabla, al lado del boton de nuevo, poner regresar. Poner mensajes igual en adopciones.
+# input de imagen, alertas en rojo/con un label, mostrar mensaje de guardado exitoso. (django menssage), editar o eliminar la imagen, anadir titulo a todas las ventanas. Cuando se elimine igula mensaje de eliminado,  Poner mensajes igual en adopciones.

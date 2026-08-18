@@ -8648,3 +8648,9 @@ body{
 .btn-primary{
     margin-right: 5px;
 }
+.error-label {
+    color: red;
+    font-size: 0.85em;
+    display: block;
+    margin-top: 3px;
+}
